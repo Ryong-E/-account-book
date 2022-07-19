@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="addButton.css" />
+    <link href="//font.elice.io/EliceDigitalBaeum.css" rel="stylesheet" />
+    <title>How Much This Month</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="inner-container">
+        <header>
+          <div id="title">
+            <span>폭락장 지갑</span>
+          </div>
+        </header>
+
+        <div id="view-total">
+          <div id="total-container">
+            <div id="sum-total">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/05/02/01/42/wallet-7168740_960_720.png"
+                width="200px"
+                alt="wallet"
+              />
+              <p>
+                안녕하세요 <span>사용자</span>님! <br />지난 1개월 간의 거래
+                내력을<br />확인해보세요!
+              </p>
+              <span style="margin-right: 10px;">₩</span><span id="total-status">0</span>
+            </div>
+
+            <div id="in-out-total">
+              <div id="in">
+                <span>들어온 돈</span><span id="in-num">0</span>
+              </div>
+              <div id="var"></div>
+              <div id="out">
+                <span>나간 돈</span><span id="out-num">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-top-container">
+      <div class="middle-container">
+        <div id="choose-type">
+          <ul>
+            <li><a>전체내역</a></li>
+            <li><a>수입</a></li>
+            <li><a>지출</a></li>
+          </ul>
+        </div>
+        <div class="width-line"></div>
+        <div id="add-list">
+          <ul></ul>
+        </div>
+        <div id="add-pay-log">
+          <div>
+            <img
+              src="https://cdn.pixabay.com/photo/2012/04/02/16/07/plus-24844__340.png"
+              width="30px"
+              height="30px"
+              alt="Plus"
+            />
+            <span>새 거래 내역을 추가해주세요</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="add-top-container show">
+        <div class="add-container">
+          <div>
+            <div id="add-header">
+              <span>추가할 내역</span>
+            </div>
+            <div id="add-date">
+              <div id="add-date-header">
+                <span>날짜</span>
+              </div>
+              <div id="add-date-input">
+                <input
+                  type="number"
+                  placeholder="2022"
+                  maxlength="4"
+                  oninput="cutingInput(this)"
+                />
+                <input
+                  type="number"
+                  placeholder="01"
+                  maxlength="2"
+                  min="1"
+                  max="12"
+                  oninput="cutingInput(this)"
+                />
+                <input
+                  type="number"
+                  placeholder="01"
+                  maxlength="2"
+                  min="1"
+                  max="31"
+                  oninput="cutingInput(this)"
+                />
+              </div>
+            </div>
+            <div id="add-content">
+              <div id="add-content-header">
+                <span>내용</span>
+              </div>
+              <div id="add-content-button">
+                <input type="button" value="들어온 돈" name="in-money"></input >
+                <input type="button" value="나간 돈" name="out-money"></input >
+              </div>
+              <div id="add-content-input">
+                <input type="text" placeholder="내용을 입력하세요 (예) 술값)" />
+              </div>
+            </div>
+            <div id="add-amount">
+              <div id="add-amount-header">
+                <span>금액</span>
+              </div>
+              <div id="add-amount-input">
+                <input type="text" placeholder="금액을 입력하세요 (예) 10000)" />
+              </div>
+            </div>
+            <div id="add-submit-delete">
+              <div id="add-submit-delete1">
+                <button>입력하기</button>
+              </div>
+              <div id="add-submit-delete2">
+                <button>닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <footer style="z-index: -1">
+      <div class="custom-shape-divider-bottom-1657798146">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="custom-shape-divider-bottom-1657798270">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+  <script type="module" src="loadContent.js"></script>
+  <script type="module" src="addDeal.js"></script>
+  <script type="module" src="askName.js"></script>
+  <script type="module" src="total.js"></script>
+  <script src="cutting.js"></script>
+</html>

@@ -1,0 +1,427 @@
+@import url(//font.elice.io/EliceDigitalBaeum.css);
+* {
+  font-family: "Elice Digital Baeum", sans-serif;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #eee;
+}
+/* 사용 틀 */
+.container {
+  width: 420px;
+  border-radius: 35px;
+  box-shadow: 8px 8px 40px rgba(143, 143, 150, 0.55),
+    -10px -10px 30px rgb(255, 255, 255, 0.8);
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.inner-container {
+  width: 100%;
+  height: 100%;
+
+  background: #f5f5f6;
+
+  border-radius: 35px 35px 0 0;
+  box-shadow: inset -12px -12px 16px rgb(174, 174, 192, 0.32),
+    inset 14px 14px 12px rgba(255, 255, 255);
+
+  padding: 0 22px 40px 22px;
+}
+.middle-top-container {
+  width: 420px;
+  border-radius: 35px;
+  box-shadow: 8px 8px 40px rgba(143, 143, 150, 0.55),
+    -10px -10px 30px rgb(255, 255, 255, 0.8);
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.middle-container {
+  width: 100%;
+  height: 100%;
+
+  background: #f5f5f6;
+
+  border-radius: 0 0 35px 35px;
+  box-shadow: inset -12px -12px 16px rgb(174, 174, 192, 0.32),
+    inset 14px 14px 12px rgba(255, 255, 255);
+
+  padding: 0 22px 40px 22px;
+}
+
+.add-top-container {
+  width: 420px;
+  border-radius: 35px;
+  box-shadow: 8px 8px 40px rgba(143, 143, 150, 0.55);
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.add-container {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f6;
+  border-radius: 0 0 35px 35px;
+  box-shadow: inset -12px -12px 16px rgb(174, 174, 192, 0.32),
+    inset 14px 14px 12px rgba(255, 255, 255);
+
+  padding: 0 22px 40px 22px;
+}
+
+.adding {
+  border-radius: 0;
+}
+/* 제목부분 */
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 2px solid #cdd0d5;
+  position: relative;
+  margin-bottom: 30px;
+}
+#title {
+  font-size: 20px;
+  margin: 0 auto;
+  clear: both;
+}
+#sum-total p {
+  font-size: 18px;
+  width: 250px;
+}
+#sum-total > p > span {
+  font-size: 18px;
+}
+#sum-total > span {
+  font-size: 30px;
+  color: #7fd1ae;
+}
+#sum-total {
+  margin-bottom: 30px;
+}
+#view-total {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#total-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+#total-container > span {
+  font-size: 30px;
+}
+#in-out-total {
+  width: 400px;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid #cdd0d5;
+  box-shadow: 1px 1px 1px #eee inset, -1px -1px 1px #eee inset;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 18px;
+  font-weight: 100;
+  align-items: center;
+}
+
+#var {
+  content: "";
+  width: 1px;
+  height: 50px;
+  background-color: black;
+}
+#in {
+  display: flex;
+  flex-direction: column;
+}
+#out {
+  display: flex;
+  flex-direction: column;
+}
+#in-num {
+  color: red;
+}
+#out-num {
+  color: blue;
+}
+
+/* 지출내역 종류별로 확인 middle-container
+/////////////////////////////////////
+ */
+
+#choose-type {
+  height: 40px;
+}
+#choose-type > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#choose-type > ul li {
+  float: left;
+  margin: 10px 20px 0 0;
+  font-size: 20px;
+}
+.width-line {
+  clear: both;
+  width: 420px;
+  height: 2px;
+  background-color: #cdd0d5;
+  margin: 10px 0 20px 0;
+}
+#add-pay-log {
+  width: 100%;
+}
+#add-pay-log > div {
+  border: 1.5px dotted #7fd1ae;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#add-pay-log > div > img {
+  margin-bottom: 10px;
+  border: 1.5px dotted #7fd1ae;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+/* 추가 할 내역 
+/////////////////////////////////////*/
+
+#add-header {
+  font-size: 20px;
+  border-bottom: 2px solid #cdd0d5;
+  padding: 10px 0 10px 0;
+}
+
+#add-date {
+  margin-top: 10px;
+}
+#add-date-header {
+  font-size: 15px;
+}
+#add-date-input {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#add-date-input input {
+  width: 120px;
+  text-align: center;
+  height: 40px;
+  border: 1px solid #cdd0d5;
+  border-radius: 10px;
+  background-color: #cdd0d5;
+}
+#add-content {
+  margin-top: 10px;
+}
+#add-content-header {
+  font-size: 15px;
+}
+#add-content-button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-content-button input {
+  width: 45%;
+  height: 40px;
+  border: 1px solid #cdd0d5;
+  border-radius: 10px;
+  background-color: #cdd0d5;
+  cursor: pointer;
+}
+
+#add-content-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#add-content-input input {
+  padding-left: 20px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #cdd0d5;
+  border-radius: 10px;
+  background-color: #cdd0d5;
+}
+#add-amount {
+  margin-top: 10px;
+}
+#add-amount-header {
+  font-size: 15px;
+}
+
+#add-amount-input {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+#add-amount-input input {
+  height: 40px;
+  width: 100%;
+  border: 1px solid #cdd0d5;
+  border-radius: 10px;
+  background-color: #cdd0d5;
+  padding-left: 20px;
+}
+
+#add-submit-delete {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#add-submit-delete1,
+#add-submit-delete2 {
+  display: flex;
+  justify-content: center;
+}
+#add-submit-delete1 button,
+#add-submit-delete2 button {
+  width: 100%;
+  margin-top: 5px;
+  height: 50px;
+  border: 1px solid #cdd0d5;
+  border-radius: 10px;
+  background-color: #cdd0d5;
+  cursor: pointer;
+}
+
+.show {
+  display: none;
+}
+
+/* SVG */
+.custom-shape-divider-bottom-1657798146 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1657798146 svg {
+  position: relative;
+  display: block;
+  width: calc(120% + 1.3px);
+  height: 395px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1657798146 .shape-fill {
+  fill: #7fd1ae;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1657798146 svg {
+    width: calc(203% + 1.3px);
+    height: 145px;
+  }
+}
+.custom-shape-divider-bottom-1657798237 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1657798270 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1657798270 svg {
+  position: relative;
+  display: block;
+  width: calc(162% + 1.3px);
+  height: 500px;
+}
+
+.custom-shape-divider-bottom-1657798270 .shape-fill {
+  fill: #7fd1ae;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1657798270 svg {
+    width: calc(203% + 1.3px);
+    height: 145px;
+  }
+}
+footer {
+  position: relative;
+  top: 550px;
+  z-index: -2;
+}
+
+/* ////////// add-list  */
+
+#add-list {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#add-list ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+#add-list ul li {
+  margin-bottom: 10px;
+  width: 95%;
+  background-color: white;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  padding: 10px;
+}
+#add-list ul li > span{
+  color: #cdd0d5;
+}
+
+#add-list ul li span {
+  font-size: 15px;
+}
+#add-list ul li div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-list ul li div span:nth-child(2) {
+  position: relative;
+  bottom: 10px;
+  font-size: 18px;
+  margin-right: 20px;
+}

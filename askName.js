@@ -21,7 +21,6 @@ export function paintUser(user) {
 }
 
 
-
 // function cutingMonthInput(object) {
 //   if (object.value.length > object.maxLength) {
 //     object.value = object.value.slice(0, object.maxLength);
@@ -35,4 +34,3 @@ export function paintUser(user) {
 //   if (object.value.length > object.maxLength) {
 //     object.value = object.value.slice(0, object.maxLength);
 //   }
-// }

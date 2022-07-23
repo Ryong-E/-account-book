@@ -5,7 +5,10 @@ function calculateContent(){
     let minusAmount = 0
     let plusAmount = 0
     for (let i = 0; i < transactions.length; i++){
-        if (transactions[i].sendout == 1){
+        if (transactions[i].amount == ''){
+            total += 0
+        }
+        else if (transactions[i].sendout == 1){
             minusAmount += transactions[i].amount * -1
         }
         else if(transactions[i].sendout == 0){

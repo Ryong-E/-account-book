@@ -1,4 +1,4 @@
-@import url(//font.elice.io/EliceDigitalBaeum.css);
+@import url('//font.elice.io/EliceDigitalBaeum.css');
 * {
   font-family: "Elice Digital Baeum", sans-serif;
 }
@@ -388,8 +388,35 @@ footer {
 #add-list {
   width: 100%;
   margin-bottom: 10px;
+  overflow: hidden;
+}
+#add-list ul li:hover{
+  transform: translateX(-80px);
+  transition: all ease-in-out 0.5s
 }
 
+.del-btn{
+  width: 70px;
+  height: 68px;
+  border: 0;
+  border-radius: 5px;
+  background-color: none;
+  position: absolute;
+  top: 2px;
+  right: -75px;
+  cursor: pointer;
+ display: flex;
+align-content: center;
+justify-content: center;
+}
+.del-btn> span{
+  line-height: 0px;
+  cursor: pointer;
+}
+
+.del-btn> span:hover{
+  color: #7fd1ae;
+}
 #add-list ul {
   display: flex;
   flex-direction: column;
@@ -399,29 +426,42 @@ footer {
   padding: 0;
   list-style: none;
 }
-#add-list ul li {
+#add-list ul > li {
   margin-bottom: 10px;
   width: 95%;
+  height: 50px;
   background-color: white;
   border: 2px solid #eee;
   border-radius: 20px;
   padding: 10px;
+  position: relative;
+  transform: translateX(0);
+  transition-duration: 0.5s;
 }
 #add-list ul li > span{
   color: #cdd0d5;
+  position:absolute;
+  top: 5px;
 }
 
 #add-list ul li span {
   font-size: 15px;
 }
-#add-list ul li div {
-  display: flex;
-  justify-content: space-between;
+
+
+#add-list ul li div span:nth-child(1) {
+  font-size: 18px;
+  position:absolute;
+  top: 30px;
+  margin: 3px 0 0 5px;
 }
 
+
 #add-list ul li div span:nth-child(2) {
-  position: relative;
-  bottom: 10px;
+  bottom: 20px;
+  position: absolute;
+  right: 0;
   font-size: 18px;
   margin-right: 20px;
 }
+

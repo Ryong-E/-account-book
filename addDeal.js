@@ -1,13 +1,12 @@
-import paintList from "./loadContent.js";
+import loadList from "./loadContent.js";
 import calculateContent from "./total.js";
 import { load, askForName, paintUser } from "./askName.js";
-window.onload = function () {
-  load();
-  paintList();
-  calculateContent();
-};
 
-const add = document.querySelector("#add-pay-log > div");
+
+
+
+
+const add = document.querySelector("#add-pay-log");
 const year = document.querySelector("#add-date-input :nth-child(1)");
 const month = document.querySelector("#add-date-input :nth-child(2)");
 const day = document.querySelector("#add-date-input :nth-child(3)");
@@ -15,21 +14,34 @@ const gather = document.querySelector("#add-content-button :nth-child(1)");
 const sendout = document.querySelector("#add-content-button :nth-child(2)");
 const submitButton = document.querySelector("#add-submit-delete1 button");
 const showme = document.querySelector(".add-top-container");
-const localStorageTranscation = JSON.parse(localStorage.getItem("history"));
+const closeButton = document.querySelector("#add-submit-delete2");
+let localStorageTranscation = JSON.parse(localStorage.getItem("history"));
 export let transactions =
   localStorage.getItem("history") == null ? [] : localStorageTranscation
 
-add.addEventListener("click", () => {
+
+  firstIn()
+function firstIn(){
+load();
+loadList();
+calculateContent();
+}
+
+
+add.addEventListener("click", (e) => {
+  e.preventDefault();
   showme.classList.remove("show");
   document.querySelector(".middle-top-container").classList += " adding";
   document.querySelector(".middle-container").classList += " adding";
 });
+
 
 gather.on = 0;
 sendout.on = 0;
 gather.addEventListener("click", gatherFor);
 sendout.addEventListener("click", sendoutFor);
 submitButton.addEventListener("click", submitAdd);
+closeButton.addEventListener("click", closeAdd);
 
 // 버튼 눌렀을 떄 양쪽 확인해서 적용
 function gatherFor() {
@@ -63,7 +75,9 @@ function sendoutFor() {
 //제출 버튼 클릭시 이벤트
 function submitAdd(e) {
   e.preventDefault();
+  const id = Math.floor(Math.random() * 1000000)
   const transaction = {
+    id,
     Date: `${year.value}${month.value}${day.value}`,
     gather: gather.on,
     sendout: sendout.on,
@@ -85,13 +99,34 @@ function submitAdd(e) {
 
   //로컬 스토리지에 입력한 값 추가하기
   updateTranscation();
-  showme.classList.add("show");
-  document.querySelector(".middle-top-container").classList.remove("adding");
-  document.querySelector(".middle-container").classList.remove("adding");
-  paintList();
+  closeAdd()
+  loadList();
   calculateContent();
 }
 
-const updateTranscation = () => {
+export const updateTranscation = () => {
   localStorage.setItem("history", JSON.stringify(transactions));
 };
+
+
+
+function closeAdd(){
+  showme.classList.add("show");
+  document.querySelector(".middle-top-container").classList.remove("adding");
+  document.querySelector(".middle-container").classList.remove("adding");
+}
+
+
+
+
+function delList(e){
+  transactions = transactions.filter((res) => res.id !== Number(e.target.dataset.num))
+  updateTranscation()
+  loadList()
+  calculateContent()
+}
+
+
+
+const b = document.querySelector('#add-list')
+b.addEventListener('click',delList)

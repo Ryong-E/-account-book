@@ -2,14 +2,39 @@ import { transactions } from "./addDeal.js";
 
 
 function loadList() {
+  const inone = document.getElementById("in-log")
+  const outone = document.getElementById("out-log")
+  const all = document.getElementById("all-log")
   let htmllist = "";
+  let type = "";
+  let color = "";
+  let data;
+  data = transactions.sort(function (a,b){
+    const namea = a.Date;
+    const nameb = b.Date;
+    if (namea < nameb){
+      return -1
+    }
+    if (namea > nameb){
+      return 1
+    }
+    return 0
+  })
+
+  if (inone.classList.contains('sort')){
+    data  = transactions.filter((elem) => elem.gather === 1)
+  }
+  else if (outone.classList.contains('sort')){
+    data  = transactions.filter((elem) => elem.sendout === 1)
+  }
+  else{
+    data = transactions
+  }
   document.querySelector("#add-list ul").innerHTML = ''
-  transactions.forEach((list) => {
+  data.forEach((list) => {
     if (list.amount === "") {
       return;
     }
-    let type = "";
-    let color = "";
     let localeAmount = parseInt(list.amount);
     localeAmount = localeAmount.toLocaleString("ko-KR");
 

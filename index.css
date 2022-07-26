@@ -173,6 +173,7 @@ header {
   float: left;
   margin: 10px 20px 0 0;
   font-size: 20px;
+  color: #cdd0d5;
 }
 .width-line {
   clear: both;
@@ -200,6 +201,12 @@ header {
   border-radius: 50%;
   padding: 8px;
 }
+
+
+#choose-type > ul li {
+  cursor: pointer;
+}
+
 
 /* 추가 할 내역 
 /////////////////////////////////////*/
@@ -465,3 +472,11 @@ justify-content: center;
   margin-right: 20px;
 }
 
+
+
+
+
+
+.sort{
+  color: black;
+}

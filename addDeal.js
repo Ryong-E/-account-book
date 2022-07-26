@@ -23,7 +23,7 @@ export let transactions =
   firstIn()
 function firstIn(){
 load();
-loadList();
+loadList()
 calculateContent();
 }
 
@@ -130,3 +130,33 @@ function delList(e){
 
 const b = document.querySelector('#add-list')
 b.addEventListener('click',delList)
+
+
+
+
+
+const sortHandler = document.querySelector("#choose-type")
+const inLog = document.getElementById("in-log")
+const outLog = document.getElementById("out-log")
+const allLog = document.getElementById("all-log")
+
+sortHandler.addEventListener('click', (e) => {
+    if (e.target === inLog) {
+        allLog.classList.remove('sort')
+        inLog.classList.add('sort')
+        outLog.classList.remove('sort')
+        loadList()
+    }
+    else if (e.target === outLog) {
+        allLog.classList.remove('sort')
+        inLog.classList.remove('sort')
+        outLog.classList.add('sort')
+        loadList()
+    }
+    else if (e.target === allLog) {
+        allLog.classList.add('sort')
+        inLog.classList.remove('sort')
+        outLog.classList.remove('sort')
+        loadList()
+    }
+})
